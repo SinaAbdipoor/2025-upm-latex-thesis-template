@@ -1,0 +1,100 @@
+% main.tex
+% Last reviewed: 9 Oct 2024 by Sina Abdipoor
+% WHAT ARE YOU DOING HERE? GO READ THE DAMN README!
+% This is the main file. All the information for the thesis is gathered here. Also, all the formatting and margins are dealt with here as well.
+\documentclass[openany, a4paper, 12pt, doublespacing]{book}
+\usepackage{setspace, geometry, titlesec, fancyhdr, enumitem, graphicx, acro, color, makecell, amsmath, amsfonts, pifont, tabularx, hyperref}
+
+\usepackage[style=apa, backend=biber]{biblatex}
+\addbibresource{references.bib}
+\addbibresource{publications.bib}
+
+\usepackage{} % Add your packages here if needed
+
+\graphicspath{{./figures/}} % Add all your figures to the "figures" folder.
+
+\input{info}
+\input{acronym}
+
+% Formatting starts here
+%\geometry{top=2.33cm, bottom=2.22cm, left=2.29cm, right=0.81cm}
+\geometry{top=2.33cm, bottom=2.22cm}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\setcounter{secnumdepth}{3}
+
+\makeatletter
+\renewcommand{\@dotsep}{1000}
+\makeatother
+
+\titleformat{\chapter}[display]{\normalsize\bfseries\centering}{CHAPTER \thechapter}{1em}{\uppercase}
+\titleformat{\section}{\normalsize\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titlespacing{\chapter}{0pt}{0pt}{0pt}
+\titlespacing{\section}{0pt}{0pt}{0pt}
+\titlespacing{\subsection}{0pt}{0pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{0pt}{0pt}
+% Formatting ends here
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{singlespace}
+        \include{titlepage}
+        \include{copyright}
+    \end{singlespace}
+\end{titlepage}
+
+\frontmatter
+\include{abstract}
+\include{abstrak}
+\include{acknowledgment}
+
+\begin{singlespace}
+    \include{approval}
+    \include{declaration}
+\end{singlespace}
+
+\begin{singlespace}
+    \setlength{\parskip}{0pt}
+    \renewcommand{\contentsname}{TABLE OF CONTENTS}
+    \tableofcontents
+    \setlength{\parskip}{\baselineskip}
+    \renewcommand{\listtablename}{LIST OF TABLES}
+    \listoftables
+    \addcontentsline{toc}{chapter}{LIST OF TABLES}
+    \renewcommand{\listfigurename}{LIST OF FIGURES}
+    \listoffigures
+    \addcontentsline{toc}{chapter}{LIST OF FIGURES}
+    \printacronyms[name=LIST OF ABBREVIATIONS]
+    \addcontentsline{toc}{chapter}{LIST OF ABBREVIATIONS}
+\end{singlespace}
+
+\mainmatter
+\include{thesis}
+
+\backmatter
+\printbibliography[title={REFERENCES}]
+
+\appendix
+\include{appendix}
+\include{biodata}
+
+\begin{refsection}[publications.bib]
+    \nocite{*}
+    \printbibliography[title={LIST OF PUBLICATIONS}, heading=bibintoc]
+\end{refsection}
+
+\begin{singlespace}
+    \include{confirmation}
+\end{singlespace}
+
+\end{document}

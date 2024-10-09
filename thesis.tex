@@ -1,0 +1,79 @@
+% thesis.tex
+% Last reviewed: 9 Oct 2024 by Sina Abdipoor
+% TODO: Start writing your thesis here. Make sure you read the README first.
+\chapter{INTRODUCTION}
+There may be a preamble at the beginning of a chapter. The purpose may be to introduce the themes of the main headings.
+
+\section{Main heading no. 1 (Primary Level Numbering)}
+
+\subsection{Subheading no. 1 (Secondary level numbering)}
+There should be at least two subheadings to justify having subheadings.
+
+\subsection{Subheading no. 2 (Secondary level numbering)}
+All first letters of principal words are capitalised and the subheading is left justified.
+
+\subsubsection{Tertiary heading no. 1 (Under Subheading no. 2)}
+There should be at least two tertiary headings to justify having tertiary headings.
+
+\subsubsection{Tertiary heading no. 2 (Under Subheading no. 2)}
+Tertiary and subsequent headings should not be listed in the Table of Contents.
+
+\newpage
+\textcolor{blue}{Sample of Table (with vertical lines)}
+
+\begin{table}[h]
+%\centering
+\renewcommand\cellalign{l}
+\caption{Number of visitors according to participation in different activities}
+\begin{tabular}{|l|c|c|}
+    \hline
+    \textbf{Activity} & \textbf{\makecell{No. of\\participants\\(N=96)}} & \textbf{NA} \\
+    \hline
+    Wildlife & - & 96 \\
+    Sighting & - & 96 \\
+    Fishing & 92 (95.8) & 4 \\
+    Photography & - & 96 \\
+    Camping & 47 (49.0) & 49 \\
+    Picnicking & 96 (100) & - \\
+    Visiting & 84 (87.5) & 12 \\
+    Waterfall & 4 (4.2) & 92 \\
+    \makecell{Sightseeing and nature\\observation} & 50 (52.1) & 46 \\
+    \hline
+\end{tabular}
+\\Note: Figures in parentheses indicate percentage of N\\NA: Not applicable
+\label{tab:visitor-count}
+\end{table}
+
+\newpage
+\textcolor{blue}{Sample of Table (without vertical lines)}
+
+\begin{table}[h]
+%\centering
+\caption{Number of visitors according to participation in different activities}
+\begin{tabular}{lcc}
+    \hline
+    \textbf{Activity} & \textbf{\makecell{No. of participants\\(N=96)}} & \textbf{NA} \\
+    \hline
+    Wildlife & - & 96 \\
+    Sighting & - & 96 \\
+    Fishing & 92 (95.8) & 4 \\
+    Photography & - & 96 \\
+    Camping & 47 (49.0) & 49 \\
+    Picnicking & 96 (100) & - \\
+    Visiting & 84 (87.5) & 12 \\
+    Waterfall & 4 (4.2) & 92 \\
+    \hline
+\end{tabular}
+\\Note: Figures in parentheses indicate percentage of N\\NA: Not applicable\\(Source: \ac{upm})
+\label{tab:visitor-count-2}
+\end{table}
+
+\newpage
+\textcolor{blue}{Sample of Figure}
+
+\begin{figure}[h]
+    \includegraphics[width=0.75\linewidth]{onion.png}
+    \caption{The Corporate Governance Framework in Malaysia—The Onion Model}
+    (Source: \textcite{abdipoor2023meta} \tiny \textcolor{red}{not really}\normalsize)
+    \label{fig:onion}
+\end{figure}

@@ -8,7 +8,7 @@ This is not an official UPM template. Before using this for your thesis, check, 
 This project is licensed under the MIT license. You can use or modify this for your thesis as needed, but please credit the source (https://sites.google.com/view/sina-abdipoor).
 
 ## Introduction
-This is a LaTeX thesis template I created to replicate the Universiti Putra Malaysia (UPM) official Word template (20240812102832Thesis_A4_Format_(Template)_(17.05.2024).docx)(included in this project) for the year 2025. I have tried to keep it as close to the official template as I could. I have already confirmed with my supervisor and SGS that I could use this. I'm using this exact template for my own Ph.D. thesis, but as mentioned in the disclaimer, make sure your supervisor, your committee, your faculty, SGS, and UPM all accept this before you start using it.
+This is a LaTeX thesis template I created to replicate the Universiti Putra Malaysia (UPM) official Word template (20240812102832Thesis_A4_Format_(Template)_(17.05.2024).docx)(included in this project) for the year 2025. I have tried to keep it as close to the official template as I could, but as mentioned in the disclaimer, make sure your supervisor, your committee, your faculty, SGS, and UPM all accept this before you start using it.
 
 This template was a lot of work. I think I have done my part. I hope you find it useful. If you end up fixing something, or updating it, please open a request on GitHub (https://github.com/SinaAbdipoor/2025-upm-latex-thesis-template). Let's try to keep this template alive for the next students.
 

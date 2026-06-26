@@ -1,24 +1,29 @@
-% main.tex
-% Last reviewed: 9 Oct 2024 by Sina Abdipoor
-% WHAT ARE YOU DOING HERE? GO READ THE DAMN README!
-% This is the main file. All the information for the thesis is gathered here. Also, all the formatting and margins are dealt with here as well.
 \documentclass[openany, a4paper, 12pt, doublespacing]{book}
-\usepackage{setspace, geometry, titlesec, fancyhdr, enumitem, graphicx, acro, color, makecell, amsmath, amsfonts, pifont, tabularx, hyperref}
+\usepackage{setspace, geometry, titlesec, fancyhdr, enumitem, graphicx, acro, color, makecell, amsmath, amsfonts, pifont, tabularx}
 
 \usepackage[style=apa, backend=biber]{biblatex}
 \addbibresource{references.bib}
 \addbibresource{publications.bib}
+\setlength{\bibitemsep}{\baselineskip}
 
-\usepackage{} % Add your packages here if needed
+\usepackage{mdframed, multirow, multicol, longtable, lscape, algorithm, algpseudocode, microtype}
+\usepackage[figuresright]{rotating}
+\usepackage[labelfont=bf, textfont=bf, justification=justified, singlelinecheck=false]{caption}
 
-\graphicspath{{./figures/}} % Add all your figures to the "figures" folder.
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\graphicspath{{./figures/}}
 
 \input{info}
 \input{acronym}
+\acsetup{
+    list/template = longtable,
+    format/short = \normalfont
+}
 
 % Formatting starts here
-%\geometry{top=2.33cm, bottom=2.22cm, left=2.29cm, right=0.81cm}
-\geometry{top=2.33cm, bottom=2.22cm}
+\geometry{top=2.5cm, bottom=2.5cm, outer=2.5cm, inner=4cm}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{\baselineskip}
@@ -38,7 +43,7 @@
 \titleformat{\section}{\normalsize\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}{\normalsize\bfseries}{\thesubsubsection}{1em}{}
-\titlespacing{\chapter}{0pt}{0pt}{0pt}
+\titlespacing{\chapter}{0pt}{-1.7cm}{0pt}
 \titlespacing{\section}{0pt}{0pt}{0pt}
 \titlespacing{\subsection}{0pt}{0pt}{0pt}
 \titlespacing{\subsubsection}{0pt}{0pt}{0pt}
@@ -56,7 +61,7 @@
 \frontmatter
 \include{abstract}
 \include{abstrak}
-\include{acknowledgment}
+\include{acknowledgements}
 
 \begin{singlespace}
     \include{approval}
@@ -65,32 +70,44 @@
 
 \begin{singlespace}
     \setlength{\parskip}{0pt}
-    \renewcommand{\contentsname}{TABLE OF CONTENTS}
+    \renewcommand{\contentsname}{\vspace{\baselineskip}\textbf{\\TABLE OF CONTENTS\vspace{\baselineskip}}}
     \tableofcontents
     \setlength{\parskip}{\baselineskip}
-    \renewcommand{\listtablename}{LIST OF TABLES}
+    \renewcommand{\listtablename}{\textbf{\\LIST OF TABLES}}
     \listoftables
+    \addtocontents{lot}{\protect\hspace*{1em}\textbf{Table}\hfill\textbf{Page}}
     \addcontentsline{toc}{chapter}{LIST OF TABLES}
-    \renewcommand{\listfigurename}{LIST OF FIGURES}
+    \addtocontents{toc}{\vspace{-1em}}
+    \renewcommand{\listfigurename}{\vspace{0.5em}\textbf{\\LIST OF FIGURES}}
     \listoffigures
+    \addtocontents{lof}{\protect\hspace*{1em}\textbf{Figure}\hfill\textbf{Page}}
     \addcontentsline{toc}{chapter}{LIST OF FIGURES}
-    \printacronyms[name=LIST OF ABBREVIATIONS]
+    \addtocontents{toc}{\vspace{-1em}}
+    \chapter*{\textbf{\\LIST OF ABBREVIATIONS\\}}
+    \printacronyms[heading=none]
     \addcontentsline{toc}{chapter}{LIST OF ABBREVIATIONS}
 \end{singlespace}
 
 \mainmatter
 \include{thesis}
 
-\backmatter
-\printbibliography[title={REFERENCES}]
+\begin{singlespace}
+    \printbibliography[title={REFERENCES}, heading=bibintoc]
+\end{singlespace}
 
+\backmatter
 \appendix
 \include{appendix}
+\addtocontents{toc}{\vspace{-1em}}
 \include{biodata}
 
+\addcontentsline{toc}{chapter}{LIST OF PUBLICATIONS}
 \begin{refsection}[publications.bib]
     \nocite{*}
-    \printbibliography[title={LIST OF PUBLICATIONS}, heading=bibintoc]
+    \newrefcontext[sorting=ynt]
+    \begin{singlespace}
+        \printbibliography[title={LIST OF PUBLICATIONS}, heading=bibintoc]
+    \end{singlespace}
 \end{refsection}
 
 \begin{singlespace}

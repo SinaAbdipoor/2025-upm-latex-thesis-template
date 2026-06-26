@@ -5,12 +5,12 @@
 This is not an official UPM template. Before using this for your thesis, check, double-check, and triple-check with your supervisor, your faculty, and SGS that they accept this.
 
 ## Copyright
-This project is licensed under the MIT license. You can use or modify this for your thesis as needed, but please credit the source (https://sites.google.com/view/sina-abdipoor).
+This project is licensed under the MIT license. You can use or modify this for your thesis as needed.
 
 ## Introduction
 This is a LaTeX thesis template I created to replicate the Universiti Putra Malaysia (UPM) official Word template (20240812102832Thesis_A4_Format_(Template)_(17.05.2024).docx)(included in this project) for the year 2025. I have tried to keep it as close to the official template as I could, but as mentioned in the disclaimer, make sure your supervisor, your committee, your faculty, SGS, and UPM all accept this before you start using it.
 
-This template was a lot of work. I think I have done my part. I hope you find it useful. If you end up fixing something, or updating it, please open a request on GitHub (https://github.com/SinaAbdipoor/2025-upm-latex-thesis-template). Let's try to keep this template alive for the next students.
+This template was a lot of work. I hope you find it useful. If you end up fixing something, or updating it, please open a request on GitHub (https://github.com/SinaAbdipoor/2025-upm-latex-thesis-template). Let's try to keep this template alive for the next students.
 
 ## How to Use
 If you are a UPM postgraduate student and want to use this for your thesis, simply follow these steps:
@@ -87,7 +87,7 @@ An example of a table is shown in Table`~\ref{tab:my_label}`.
 Use `\textcite{}` command to cite a paper from your "references.bib" as a text and use `\parencite{}` to cite in a parenthesis. Example: `\textcite{abdipoor2023meta}` claimed that their paper is super good `\parencite{abdipoor2023meta}`.
 
 ## How to Modify
-By the time you read this, I'll have hopefully graduated (knock on wood). So, as Cantonese say "Ji Gaau Dim" or you are on your own. But just a few things to help you:
+By the time you read this, I'll have hopefully graduated (knock on wood). So, as Cantonese say "Ji Gao Dim" or you are on your own. But just a few things to help you:
 
 - If you want to change the general formatting of the paper, like the font, the margins, etc., go to "main.tex".
 - Everything is pretty modular. So, if one of the pages of the template is outdated, or if there's an error, just go to the corresponding .tex file of that page and try to fix it.

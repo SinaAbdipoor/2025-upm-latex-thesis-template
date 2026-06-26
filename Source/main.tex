@@ -70,29 +70,31 @@
 
 \begin{singlespace}
     \setlength{\parskip}{0pt}
-    \renewcommand{\contentsname}{\vspace{\baselineskip}\textbf{\\TABLE OF CONTENTS\vspace{\baselineskip}}}
+    \renewcommand{\contentsname}{\vspace{\baselineskip}\textbf{\\TABLE OF CONTENTS\vspace{2\baselineskip}}}
     \tableofcontents
     \setlength{\parskip}{\baselineskip}
     \renewcommand{\listtablename}{\textbf{\\LIST OF TABLES}}
     \listoftables
-    \addtocontents{lot}{\protect\hspace*{1em}\textbf{Table}\hfill\textbf{Page}}
+    \addtocontents{lot}{\protect\hspace*{1em}\textbf{Table}\hfill\textbf{Page}\protect\par\protect\vspace{-1em}}
     \addcontentsline{toc}{chapter}{LIST OF TABLES}
     \addtocontents{toc}{\vspace{-1em}}
     \renewcommand{\listfigurename}{\vspace{0.5em}\textbf{\\LIST OF FIGURES}}
     \listoffigures
-    \addtocontents{lof}{\protect\hspace*{1em}\textbf{Figure}\hfill\textbf{Page}}
+    \addtocontents{lof}{\protect\hspace*{1em}\textbf{Figure}\hfill\textbf{Page}\protect\par\protect\vspace{-1em}}
     \addcontentsline{toc}{chapter}{LIST OF FIGURES}
     \addtocontents{toc}{\vspace{-1em}}
-    \chapter*{\textbf{\\LIST OF ABBREVIATIONS\\}}
-    \printacronyms[heading=none]
-    \addcontentsline{toc}{chapter}{LIST OF ABBREVIATIONS}
 \end{singlespace}
+\chapter*{\textbf{LIST OF ABBREVIATIONS}}
+\addcontentsline{toc}{chapter}{LIST OF ABBREVIATIONS}
+\vspace{-1.5em}
+\printacronyms[heading=none]
 
 \mainmatter
 \include{thesis}
 
 \begin{singlespace}
     \printbibliography[title={REFERENCES}, heading=bibintoc]
+    \addtocontents{toc}{\vspace{-1em}}
 \end{singlespace}
 
 \backmatter
@@ -101,7 +103,6 @@
 \addtocontents{toc}{\vspace{-1em}}
 \include{biodata}
 
-\addcontentsline{toc}{chapter}{LIST OF PUBLICATIONS}
 \begin{refsection}[publications.bib]
     \nocite{*}
     \newrefcontext[sorting=ynt]
